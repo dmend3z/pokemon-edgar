@@ -1,17 +1,16 @@
-import React, {useContext} from "react"
+import React from "react"
 
 const Card = (props) => {
 
-    const {optionSelected, setOptionSelected} = useContext(PokemonContext)
+    const { description, type, name, hp, attack, defense, spAttack, spDefense, speed, height, weight, imageURL } = props; 
 
-    const {description, type, name, hp, attack, defense, spAttack, spDefense, speed, height, weight, imageURL} = props; 
     return (
     <>
-        <div onClick={() => optionSelected===name?setOptionSelected(null): setOptionSelected(name)}
-            className={`pokemon-card ${type.toLowerCase()} ${ name === optionSelected ? 'selected': ''}`} 
+        <div
+            className={`pokemon-card ${type.toLowerCase()}`} 
             id="pokemon-card">
             <div className="pokemon-card-image-container">
-                <img id="pokemon-image" src={imageURL} alt="pokemon-image"/>   
+                <img id="pokemon-image" src={imageURL} alt="Pokemon"/>   
             </div>
             <div className="pokemon-card-container">
                 <div className="pokemon-card-type">
@@ -86,4 +85,4 @@ const Card = (props) => {
     )
 }
 
-export default Card
+export default Card;
