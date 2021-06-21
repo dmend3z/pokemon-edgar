@@ -1,5 +1,4 @@
 import React from "react";
-import Styled from "styled-components";
 import { useDispatch } from "react-redux";
 import * as actions from "../redux/actions";
 import { selectAllTypes }  from "../redux/selectors";

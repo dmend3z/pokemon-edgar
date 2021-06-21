@@ -9,7 +9,7 @@ const CardsList = (props) => {
 
     return (
         <>
-            {pokemons.map (pokemon => <Card />)}
+            {pokemons.map (pokemon => <div>{pokemon.name}</div>)}
         </>
     );
 }
