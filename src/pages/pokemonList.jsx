@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { fetchAction }  from "../redux/actions/";
+import { fetchPokemons }  from "../redux/actions/";
 import React, {useEffect} from "react";
 import Dropdown from "../components/dropdown";
 import Pagination from "../components/pagination";
