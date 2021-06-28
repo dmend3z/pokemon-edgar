@@ -1,11 +1,11 @@
 const Pagination = (props) => {
-    const { actualPage, totalPages } = props;
+  const { actualPage, totalPages } = props;
 
-    return (
-        <div>
-            {actualPage} / {totalPages}
-        </div>
-    );
-}
+  return totalPages > 1 ? (
+    <div>
+      <strong>{actualPage}</strong>
+    </div>
+  ) : null;
+};
 
 export default Pagination;

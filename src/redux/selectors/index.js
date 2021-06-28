@@ -13,11 +13,17 @@ export const selectPokemons = state => state.pokemons;
 export const selectAllTypes = state => state.types;
 
 // selector que selecciona os pokemons por tipo
-export const selectPokemonsByType = createSelector(selectPokemons, selectType, (pokemons, type) => pokemons.filter( pokemon => pokemon.types.type.name === type));
+export const selectPokemonsByType = createSelector(selectPokemons, selectType, (pokemons, selectedType) => 
+   selectedType === 'All' ? pokemons: pokemons.filter(pokemon => 
+    pokemon.types.filter(type => type.type.name === selectedType.toLowerCase()).length
+  )
+)
 
 // selector que seleciona os pokemons por página e tipo 
 const numberOfPokemonsPerPage = 20;
 export const selectPokomentsByTypeAndPage = createSelector(
   selectPokemonsByType, 
   selectPage, 
-  (page, pokemons) => pokemons.slice(numberOfPokemonsPerPage * (page - 1)  , numberOfPokemonsPerPage * page));
+  (pokemons, page ) => 
+     pokemons.slice(numberOfPokemonsPerPage * (page - 1)  , numberOfPokemonsPerPage * page)
+  )

@@ -1,9 +1,9 @@
-import { SET_PAGE, POKEMON_COMPLETE } from "../actions/constants";
+import { SET_PAGE, POKEMON_COMPLETE, SET_TYPE,SET_TYPES } from "../actions/constants";
 const initialState = {
   pokemons: [],
   page: 1,
   selectedType: "All",
-  types: ["normal", "fire", "water", "eletric", "psychic", "fly", "rock"],
+  types: ["All"],
 };
 
 function rootReducer(state = initialState, action) {
@@ -18,8 +18,22 @@ function rootReducer(state = initialState, action) {
     case POKEMON_COMPLETE: {
       return {
         ...state,
-        pokemons: action.value,
+        pokemons: action.value
       };
+    }
+
+    case SET_TYPE: {
+      return {
+        ...state,
+        selectedType: action.value
+      }
+    }
+
+    case SET_TYPES: {
+      return {
+        ...state,
+        types: action.value
+      }
     }
 
     default:

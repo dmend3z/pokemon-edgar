@@ -21,7 +21,7 @@ const Dropdown = (props) => {
   return (
     <>
       <label>
-        <b>{label}:</b>
+        <b>{label}</b>
       </label>
       <div>
         <select
@@ -33,7 +33,7 @@ const Dropdown = (props) => {
         >
           {types.map((element, key) => (
             <option key={key} value={element}>
-              {element}
+              {element.charAt(0).toUpperCase() + element.slice(1)}
             </option>
           ))}
         </select>
